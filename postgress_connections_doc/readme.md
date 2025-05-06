@@ -37,8 +37,7 @@ SELECT public.get_long_running_queries();
 ```
 ## Nagios server preprations
 
-Copy script file
-Create .env file:
+Copy script file then create .env file:
 ```bash
 DB_USER=monitor
 DB_PASSWORD=PASSWORD

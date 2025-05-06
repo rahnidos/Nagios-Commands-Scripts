@@ -13,6 +13,7 @@ except IndexError:
 
 db_user = os.getenv("DB_USER")
 db_password = os.getenv("DB_PASSWORD")
+db_name = os.getenv("DB_NAME")
 
 if not db_user or not db_password:
     print("UNKNOWN - Missing database credentials in .env file.")
@@ -22,7 +23,8 @@ try:
     connection = psycopg2.connect(
         host=host,
         user=db_user,
-        password=db_password
+        password=db_password,
+        dbname=db_name
     )
 except psycopg2.OperationalError as e:
     print(f"UNKNOWN - Failed to connect to the database: {e}")
