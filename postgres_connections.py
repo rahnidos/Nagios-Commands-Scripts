@@ -31,7 +31,7 @@ except psycopg2.OperationalError as e:
     sys.exit(3)  
 
 try:
-    query = "SELECT count(pid) FROM pg_stat_activity WHERE state <> 'idle' AND now() - query_start > interval '5 minutes';"
+    query = "SELECT public.get_long_running_queries();"
     with connection.cursor() as cursor:
         cursor.execute(query)
         result = cursor.fetchone()
