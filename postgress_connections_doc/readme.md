@@ -1,3 +1,9 @@
+# Idea
+This script checks for active connections that have been open longer than 5 minutes. It returns:
+• OK (0) if there are none
+• WARNING (1) if there are fewer than five
+• CRITICAL (2) if there are five or more
+
 # Preparations
 
 ## Data base preparations
@@ -37,4 +43,9 @@ Create .env file:
 DB_USER=monitor
 DB_PASSWORD=PASSWORD
 DB_NAME=DB_NAME
+```
+
+## Nagios command config
+```conf
+
 ```
